@@ -1,7 +1,15 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ZSH=$HOME/.oh-my-zsh
 
 # You can change the theme with another one from https://github.com/robbyrussell/oh-my-zsh/wiki/themes
-ZSH_THEME="half-life"
+# ZSH_THEME="half-life"
+	ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Useful oh-my-zsh plugins for Le Wagon bootcamps
 plugins=(git gitfast last-working-dir common-aliases zsh-syntax-highlighting history-substring-search)
@@ -62,11 +70,44 @@ export PATH="./bin:./node_modules/.bin:${PATH}:/usr/local/sbin"
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
 
 # Encoding stuff for the terminal
-export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 export BUNDLER_EDITOR=code
 export EDITOR=code
 
 # Set ipdb as the default Python debugger
 export PYTHONBREAKPOINT=ipdb.set_trace
+
+. "/home/bakudas/.asdf/asdf.sh"
+
+# conexao VARS
+export NEO4J_USUARIO="neo4j"
+export NEO4J_SENHA="123456"
+export NEO4J_DOMINIO="http://neo4j.pgj.rj.gov.br/browser/"
+export MONGO_USUARIO="conexao"
+export MONGO_SENHA="CTrw8732QULTW389x2"
+export MONGO_HOST="p-mdb-rt01.pgj.rj.gov.br"
+export MONGO_COLLECTION="conexao"
+export MONGO_AUTHDB="admin"
+export SECRET="N&EFDA&79SAfrn&F9R9SFRN&ranF79nasf&ätF79ntäSF9&*atSFN98&tSFN"
+export AUTH_MPRJ="http://apps.mprj.mp.br/mpmapas/api/authentication"
+export USERINFO_MPRJ="http://apps.mprj.mp.br/mpmapas/api/authenticate"
+export DEV="True"
+export SISTEMAS="DOMINIO"
+export BDA_URL="bda1node05.pgj.rj.gov.br"
+export IMPALA_HOST='bda1node05.pgj.rj.gov.br'
+export IMPALA_PORT=21050
+export HDFS_USER=mpmapas
+export HDFS_URL="http://bda1node06:14000"
+export KERBEROS_USER="wilson.melo@BDA_LOCAL"
+export PREVINITY_URL=
+export PREVINITY_USER=
+export PREVINITY_PASS=
+export PATH=$PATH:$HOME/.asdf/shims/go/bin
+export PATH=$PATH:$HOME/.asdf/installs/golang/1.23.4/go/bin/
+
+. "$HOME/.grit/bin/env"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
